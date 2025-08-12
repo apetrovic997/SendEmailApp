@@ -2,7 +2,7 @@ name: Send Email Every 2 Minutes
 
 on:
   schedule:
-    - cron: '*/2 * * * *' 
+    - cron: '0 8 * * 5' 
   workflow_dispatch:      
 
 jobs:
