@@ -25,7 +25,7 @@ jobs:
         run: dotnet build --configuration Release
 
       - name: Run email sender
-        run: dotnet run --configuration Release --project ./SendEmailApp.csproj
+        run: dotnet run --configuration Release --project ./KPEmailSender.csproj
         env:
           EMAIL_USERNAME: ${{ secrets.EMAIL_USERNAME }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
