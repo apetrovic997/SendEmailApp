@@ -2,8 +2,8 @@ name: Send Email Every 2 Minutes
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # svaka 2 minuta
-  workflow_dispatch:       # dozvoljava ručno pokretanje
+    - cron: '*/2 * * * *' 
+  workflow_dispatch:      
 
 jobs:
   send-email:
