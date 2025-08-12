@@ -28,7 +28,7 @@ class Program
             TextBody = emailBody
         };
 
-        builder.Attachments.Add("saobracajna.pdf");
+        builder.Attachments.Add("Attachments/saobracajna.pdf");
 
         message.Body = builder.ToMessageBody();
 
@@ -41,3 +41,4 @@ class Program
         Console.WriteLine("Email je uspešno poslat!");
     }
 }
+
