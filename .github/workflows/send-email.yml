@@ -29,5 +29,4 @@ jobs:
         env:
           EMAIL_USERNAME: ${{ secrets.EMAIL_USERNAME }}
           EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
-          EMAIL_SMTP: ${{ secrets.EMAIL_SMTP }}
 
