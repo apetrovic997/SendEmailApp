@@ -15,12 +15,11 @@ class Program
         var subject = configuration["Email:Subject"];
         var emailBody = configuration["Email:EmailBody"];
 
-        //var email = Environment.GetEnvironmentVariable("EMAIL_USERNAME");
-        //var password = Environment.GetEnvironmentVariable("EMAIL_PASSWORD");
-        //var smtpHost = Environment.GetEnvironmentVariable("EMAIL_SMTP");
+        var email = Environment.GetEnvironmentVariable("EMAIL_USERNAME");
+        var password = Environment.GetEnvironmentVariable("EMAIL_PASSWORD");
 
         var message = new MimeMessage();
-        message.From.Add(new MailboxAddress("Andrija Petrovic", "an.petrovic1997@gmail.com"));
+        message.From.Add(new MailboxAddress("Danilo Petrovic", "an.petrovic1997@gmail.com"));
         message.To.Add(new MailboxAddress("KOMUNALNA MILICIJA", receiver));
         message.Subject = subject;
 
@@ -29,13 +28,13 @@ class Program
             TextBody = emailBody
         };
 
-        builder.Attachments.Add("Andrija_Petrovic_Resume.pdf");
+        builder.Attachments.Add("saobracajna.pdf");
 
         message.Body = builder.ToMessageBody();
 
         using var client = new SmtpClient();
         await client.ConnectAsync("smtp.gmail.com", 587, false);
-        await client.AuthenticateAsync("an.petrovic1997@gmail.com", "dquz mmot tjux vtme");
+        await client.AuthenticateAsync(email, password);
         await client.SendAsync(message);
         await client.DisconnectAsync(true);
 
