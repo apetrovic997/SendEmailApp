@@ -1,4 +1,4 @@
-name: Send Email Every 2 Minutes
+name: Send Email Every Monday
 
 on:
   schedule:
@@ -24,6 +24,11 @@ jobs:
       - name: Build project
         run: dotnet build --configuration Release
 
+      - name: Create file from BASE64 string
+        run: |
+          mkdir -p Attachments
+          echo "${{ secrets.PDF_BASE64 }}" | base64 --decode > Attachments/saobracajna.pdf
+      
       - name: Run email sender
         run: dotnet run --configuration Release --project ./KPEmailSender.csproj
         env:
