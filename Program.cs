@@ -19,7 +19,7 @@ class Program
         var password = Environment.GetEnvironmentVariable("EMAIL_PASSWORD");
 
         var message = new MimeMessage();
-        message.From.Add(new MailboxAddress("Danilo Petrovic", "an.petrovic1997@gmail.com"));
+        message.From.Add(new MailboxAddress("Danilo Petrovic", email));
         message.To.Add(new MailboxAddress("KOMUNALNA MILICIJA", receiver));
         message.Subject = subject;
 
@@ -41,4 +41,5 @@ class Program
         Console.WriteLine("Email je uspešno poslat!");
     }
 }
+
 
