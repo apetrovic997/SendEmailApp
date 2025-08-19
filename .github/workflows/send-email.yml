@@ -26,7 +26,7 @@ jobs:
 
       - name: Spoji PDF chunkove u jedan base64 fajl
         run: |
-          mkdir -p output
+          mkdir -p Attachments
           echo -n "${PART_1}" > Attachments/pdf.b64
           echo -n "${PART_2}" >> Attachments/pdf.b64
           echo -n "${PART_3}" >> Attachments/pdf.b64
