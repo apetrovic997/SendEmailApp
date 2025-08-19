@@ -25,6 +25,11 @@ jobs:
         run: dotnet build --configuration Release
 
       - name: Spoji PDF chunkove u jedan base64 fajl
+        env:
+          PART_1: ${{ secrets.PART_1 }}
+          PART_2: ${{ secrets.PART_2 }}
+          PART_3: ${{ secrets.PART_3 }}
+          PART_4: ${{ secrets.PART_4 }}
         run: |
           mkdir -p Attachments
           printf "%s" "${PART_1}" > Attachments/pdf.b64
