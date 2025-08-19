@@ -27,7 +27,7 @@ jobs:
       - name: Create file from BASE64 string
         run: |
           mkdir -p Attachments
-          echo "${{ secrets.PDF_BASE64 }}" | base64 --decode > Attachments/saobracajna.pdf
+          echo "${{ secrets.PDF_PART_1 }}${{ secrets.PDF_PART_2 }}" | base64 --decode > Attachments/saobracajna.pdf
       
       - name: Run email sender
         run: dotnet run --configuration Release --project ./KPEmailSender.csproj
