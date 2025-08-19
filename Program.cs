@@ -33,7 +33,7 @@ class Program
         message.Body = builder.ToMessageBody();
 
         using var client = new SmtpClient();
-        await client.ConnectAsync("smtp.gmail.com", 587, false);
+        await client.ConnectAsync("smtp.office365.com", 587, SecureSocketOptions.StartTls);
         await client.AuthenticateAsync(email, password);
         await client.SendAsync(message);
         await client.DisconnectAsync(true);
@@ -41,5 +41,6 @@ class Program
         Console.WriteLine("Email je uspešno poslat!");
     }
 }
+
 
 
