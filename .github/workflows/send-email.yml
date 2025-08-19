@@ -27,10 +27,10 @@ jobs:
       - name: Spoji PDF chunkove u jedan base64 fajl
         run: |
           mkdir -p Attachments
-          printf -n "${PART_1}" > Attachments/pdf.b64
-          printf -n "${PART_2}" >> Attachments/pdf.b64
-          printf -n "${PART_3}" >> Attachments/pdf.b64
-          printf -n "${PART_4}" >> Attachments/pdf.b64
+          printf "%s" "${PART_1}" > Attachments/pdf.b64
+          printf "%s" "${PART_2}" >> Attachments/pdf.b64
+          printf "%s" "${PART_3}" >> Attachments/pdf.b64
+          printf "%s" "${PART_4}" >> Attachments/pdf.b64
 
       - name: Dekodiraj PDF
         run: |
